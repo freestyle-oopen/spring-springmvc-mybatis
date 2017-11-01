@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ren.qq.mapper.UserDao">
+
+    <insert id="addUser" parameterType="com.ren.qq.pojo.User"  >
+        insert into usertable (name , pwd ) VALUES(#{name},#{pwd})
+    </insert>
+
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.ren.qq.pojo.User">
+        select name,pwd from usertable where name=#{name}
+    </select>
+
+    <delete id="delectUser" parameterType="com.ren.qq.pojo.User"  >
+        DELETE from usertable where name=#{name} and pwd=#{pwd}
+    </delete>
+
+    <select id="searchUser" parameterType="com.ren.qq.pojo.SearchInfo" resultType="com.ren.qq.pojo.User">
+        select * from usertable where name != #{exclude} and name like concat('%',#{keyword},'%')
+    </select>
+</mapper>
