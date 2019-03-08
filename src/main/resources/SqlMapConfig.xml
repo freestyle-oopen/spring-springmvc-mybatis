@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 配置别名：在MyBatis中为一个类取别名   配置别名是为了在对象映射文件***Mapper.xml中接收参数类型和返回参数类型时使用,
+    配置包名下所有类别名为类名小写，也可以单独指定一个类的别名-->
+    <typeAliases>
+        <package name="com.ren.qq.pojo"/>
+    </typeAliases>
+
+</configuration>
